@@ -12,23 +12,43 @@ class Test extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+        drawer: Drawer(
+          backgroundColor: Colors.blue,
+          child: ListView(
+            children: [
+              DrawerHeader(
+                  margin: EdgeInsets.all(30),
+                  child: Row(
+                    children: [
+                      Icon(Icons.people_alt_rounded),
+                      Text("Contacts")
+                    ],
+                  )),
+              ListTile(
+                leading: Icon(Icons.mobile_screen_share),
+                title: Text("Device"),
+                trailing: Text("0"),
+                onTap: () {},
+              ),
+              ListTile(
+                leading: Icon(Icons.mobile_screen_share),
+                title: Text("Device"),
+                trailing: Text("0"),
+                onTap: () {},
+              )
+            ],
+          ),
+        ),
         appBar: AppBar(
           title: Text("Lab06AdvancedUI"),
-          centerTitle: true,
-          elevation: 10.3,
+          backgroundColor: Colors.amber,
         ),
         body: Center(
-            child: Column(
-          children: [
-            CachedNetworkImage(
-              imageUrl:
-                  "https://www.nbc.com/sites/nbcblog/files/styles/scale_862/public/2024/07/paris-2024-olympics-soccer.jpg",
-              progressIndicatorBuilder: (context, url, downloadProgress) =>
-                  CircularProgressIndicator(value: downloadProgress.progress),
-              errorWidget: (context, url, error) => Icon(Icons.error),
-            ),
-          ],
-        )),
+          child: Text(
+            "Working With Navagation",
+            style: TextStyle(fontSize: 60),
+          ),
+        ),
       ),
     );
   }
