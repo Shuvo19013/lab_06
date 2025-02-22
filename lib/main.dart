@@ -1,53 +1,60 @@
-import 'package:cached_network_image/cached_network_image.dart';
+//import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(Test());
+  runApp(const Lab06AdvancedUI());
 }
 
-class Test extends StatelessWidget {
-  const Test({super.key});
+class Lab06AdvancedUI extends StatelessWidget {
+  const Lab06AdvancedUI({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: "Lab - 06",
       home: Scaffold(
         drawer: Drawer(
-          backgroundColor: const Color.fromARGB(255, 243, 33, 226),
+          backgroundColor: Colors.grey,
           child: ListView(
             children: [
               DrawerHeader(
-                  margin: EdgeInsets.all(30),
-                  child: Row(
-                    children: [
-                      Icon(Icons.people_alt_rounded),
-                      Text("Contacts")
-                    ],
-                  )),
+                child: Row(
+                  children: [Icon(Icons.people_alt_rounded), Text("Contacts")],
+                ),
+              ),
               ListTile(
                 leading: Icon(Icons.mobile_screen_share),
-                title: Text("Device"),
-                trailing: Text("0"),
+                title: Text('Device'),
+                trailing: Text("Anything"),
                 onTap: () {},
               ),
               ListTile(
                 leading: Icon(Icons.mobile_screen_share),
-                title: Text("Device"),
-                trailing: Text("0"),
+                title: Text('Device'),
+                trailing: Text("Anything"),
                 onTap: () {},
-              )
+              ),
             ],
           ),
         ),
         appBar: AppBar(
-          title: Text("Lab06AdvancedUI"),
+          title: const Text('Lab06 Advanced UI'),
           backgroundColor: Colors.amber,
         ),
         body: Center(
           child: Text(
-            "Working With Navagation",
+            "Working with Navigation",
             style: TextStyle(fontSize: 60),
           ),
+        ),
+        bottomNavigationBar: BottomNavigationBar(
+          items: [
+            BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.search),
+              label: "Settings",
+            ),
+          ],
         ),
       ),
     );
