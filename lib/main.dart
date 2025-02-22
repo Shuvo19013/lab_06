@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -19,11 +20,12 @@ class Test extends StatelessWidget {
         body: Center(
             child: Column(
           children: [
-            Image.network('https://picsum.photos/250?image=9'),
-            Expanded(
-              child: Image(
-                image: NetworkImage('https://picsum.photos/'),
-              ),
+            CachedNetworkImage(
+              imageUrl:
+                  "https://www.nbc.com/sites/nbcblog/files/styles/scale_862/public/2024/07/paris-2024-olympics-soccer.jpg",
+              progressIndicatorBuilder: (context, url, downloadProgress) =>
+                  CircularProgressIndicator(value: downloadProgress.progress),
+              errorWidget: (context, url, error) => Icon(Icons.error),
             ),
           ],
         )),
