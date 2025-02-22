@@ -15,7 +15,7 @@ class Test extends StatelessWidget {
         appBar: AppBar(
           title: Text("Lab06AdvancedUI"),
           centerTitle: true,
-          elevation: 10.5,
+          elevation: 10.9,
         ),
         body: Center(
             child: Column(
