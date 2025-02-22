@@ -13,7 +13,7 @@ class Test extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         drawer: Drawer(
-          backgroundColor: Colors.blue,
+          backgroundColor: const Color.fromARGB(255, 243, 33, 226),
           child: ListView(
             children: [
               DrawerHeader(
